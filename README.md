@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/JairRaid/NFT-preview-card-component
+- Live Site URL: https://jairraid.github.io/NFT-preview-card-component/
 
 ## My process
 
@@ -41,3 +41,6 @@ Users should be able to:
 - Mobile-first workflow
 
 ## Author
+
+- email: rakotonirainyriija@gmail.com
+- facebook: https://web.facebook.com/jair.rakoto.3/
