@@ -157,6 +157,12 @@ footer strong {
   footer {
     font-size: 1rem;
   }
+  section p {
+    margin-bottom: 24px;
+  }
+  hr {
+    margin: 24px 0 16px 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
