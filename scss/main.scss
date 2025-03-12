@@ -1,0 +1,163 @@
+@font-face{
+    font-family: "Outfit";
+    src: url("../fonts/Outfit-VariableFont_wght.ttf")format("truetype");
+} 
+
+/* variables */
+$cyan: #00FFF8;
+$soft-blue: #8BACD9;
+$very-dark-blue-bg: #0D192C;
+$very-dark-blue: #15263F;
+
+
+/* typo */
+@mixin typography($size, $color, $weight, $l-height, $l-spacing){
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    line-height: $l-height;
+    letter-spacing: $l-spacing;
+}
+
+/* bases */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    
+    &:hover{
+        color: $cyan;
+    }
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $very-dark-blue-bg;
+}
+
+main{
+    background-color: $very-dark-blue;
+    padding: 24px 24px 32px 24px;
+    border-radius: 15px;
+}
+
+figure{
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
+
+figure:hover::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,255,248,0.503);
+    background-image: url(../images/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+h2{
+@include typography(1.375rem, white, 600, auto, 0);
+margin-bottom: 12px;
+}
+
+section{
+    p{
+        @include typography(1.125rem, $soft-blue, 300, 26px, 0);
+        margin-bottom: 16px;
+    }
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    span:first-child{
+        @include typography(0.9375rem, $cyan, 600, auto, 0);
+        display: flex;
+        align-items: center;
+        gap: 0 6.48px;
+    }
+
+    span:last-child{
+        @include typography(0.9375rem, $soft-blue, 400, auto, 0);
+        display: flex;
+        align-items: center;
+        gap: 0 7.7px;
+    }
+}
+
+hr{
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: #2E405A;
+    margin: 16px 0 16px 0;
+}
+
+footer{
+    @include typography(0.9375rem, $soft-blue, 400, auto, 0);
+    display: flex;
+    align-items: center;
+
+    img{
+        width: 32px;
+        border: solid 1px white;
+        border-radius: 999px;
+        margin-right: 16px;
+    }
+
+    strong{
+        @include typography(0.9375rem, white, 400, auto, 0);
+        margin-left: 5px;
+    }
+}
+
+/* mobile */ 
+@media (max-width: 48rem) {
+    main{
+        width: 100%;
+        max-width: 327px;
+    }
+}
+
+/* desktop */
+@media (min-width: 48.063rem) {
+    main{
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .info{
+        span:first-child, span:last-child{
+            font-size: 1rem;
+        }
+    }
+
+    footer{
+        font-size: 1rem;
+    }
+}
